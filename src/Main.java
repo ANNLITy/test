@@ -1,21 +1,13 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        int[] first = new int[3];
-        first[0]=1;
-        first[1]=2;
-        first[2]=3;
-        for (int i = 0; i < first.length; i++) {
-            System.out.println(first[i]);
-            if(i!= first.length-1) {
-                System.out.println(", ");
-            }
+        int[] array={1,2,3,4,5};
+        for(int i = 0; i<array.length/2;i++) {
+            int temp = array[i];
+            array[i]=array[array.length-1-i];
+            array[array.length-1-i]=temp;
         }
-        System.out.println();
-        for (int i = first.length-1;i>=0; i--) {
-            System.out.println(first[i]);
-            if(i!=0) {
-                System.out.println(", ");
-            }
-        }
+        System.out.println(Arrays.toString(array));
     }
 }
